@@ -10,21 +10,13 @@ while True:
 cents = round(dollar*100)
 coins = 0
 
-while cents >= 25:
-    cents -= 25    
-    coins += 1
+nominals = [25, 10, 5, 1]
 
-while cents >= 10:
-    cents -= 10    
-    coins += 1
+for i in range(len(nominals)):
+    while cents >= nominals[i]:
+        cents -= nominals[i]    
+        coins += 1
 
-while cents >= 5:
-    cents -= 5    
-    coins += 1
-
-while cents >= 1:
-    cents -= 1    
-    coins += 1
     
 print(coins)
 
